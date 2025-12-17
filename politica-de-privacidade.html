@@ -140,7 +140,7 @@
             
             <div class="legal-header">
                 <h1 class="legal-title">Política de Privacidade</h1>
-                <p class="legal-date">Última atualização: 25 de novembro de 2025</p>
+                <p class="legal-date">Última atualização: 17 de dezembro de 2025</p>
             </div>
             
             <div class="legal-content">
@@ -235,22 +235,48 @@
                     <li>Manter o sistema operacional atualizado</li>
                 </ul>
 
-                <h2>6. Permissões do Aplicativo</h2>
+                <h2>6. Modo Servidor/Garçom e Sincronização Local</h2>
+                
+                <h3>6.1 Funcionalidade de Rede Local</h3>
+                <p>O Drillo oferece um recurso opcional de sincronização em tempo real entre múltiplos dispositivos na mesma rede Wi-Fi local:</p>
+                <ul>
+                    <li><strong>Modo Servidor:</strong> Um dispositivo principal pode funcionar como servidor local, mantendo um serviço HTTP/WebSocket ativo (porta 43210) e discovery UDP (porta 43211)</li>
+                    <li><strong>Modo Garçom:</strong> Outros dispositivos podem conectar-se ao servidor para sincronizar pedidos em tempo real</li>
+                    <li><strong>Notificação Persistente:</strong> Quando o servidor está ativo, uma notificação visível informa o status da conexão</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>IMPORTANTE SOBRE PRIVACIDADE:</strong> A sincronização servidor/garçom funciona EXCLUSIVAMENTE na rede local Wi-Fi. Nenhum dado é enviado para servidores externos ou pela internet. A comunicação ocorre apenas entre dispositivos conectados na mesma rede local.</p>
+                </div>
+
+                <h3>6.2 Serviço em Primeiro Plano</h3>
+                <p>Quando você ativa o Modo Servidor, o aplicativo utiliza um serviço em primeiro plano com as seguintes características:</p>
+                <ul>
+                    <li><strong>Visibilidade:</strong> Exibe notificação persistente enquanto o servidor está ativo</li>
+                    <li><strong>Finalidade:</strong> Mantém servidor WebSocket/HTTP ativo para sincronização em tempo real</li>
+                    <li><strong>Controle do Usuário:</strong> Você pode desativar o servidor a qualquer momento através das configurações</li>
+                    <li><strong>Notificações Interativas:</strong> Solicita aprovação para novos dispositivos que tentam conectar</li>
+                    <li><strong>Sem Coleta de Dados:</strong> O serviço não coleta, rastreia ou envia dados para servidores externos</li>
+                </ul>
+
+                <h2>7. Permissões do Aplicativo</h2>
                 <p>O Drillo solicita as seguintes permissões do Android:</p>
 
-                <h3>6.1 Permissões Obrigatórias</h3>
+                <h3>7.1 Permissões Obrigatórias</h3>
                 <ul>
                     <li><strong>Armazenamento:</strong> Para salvar dados localmente (pedidos, produtos, configurações)</li>
                     <li><strong>Bluetooth:</strong> Para conectar e imprimir em impressoras térmicas</li>
+                    <li><strong>Serviço em Primeiro Plano:</strong> Apenas quando Modo Servidor está ativo, para manter sincronização em tempo real</li>
+                    <li><strong>Acesso à Rede:</strong> Para sincronização local Wi-Fi entre dispositivos (servidor/garçom)</li>
                 </ul>
 
-                <h3>6.2 Permissões Opcionais</h3>
+                <h3>7.2 Permissões Opcionais</h3>
                 <ul>
                     <li><strong>Câmera:</strong> Apenas se você quiser adicionar fotos aos produtos (pode ser negado)</li>
                     <li><strong>Notificações:</strong> Para alertas importantes do aplicativo (pode ser desativado)</li>
                 </ul>
 
-                <h2>7. Retenção de Dados</h2>
+                <h2>8. Retenção de Dados</h2>
                 <p>Como os dados são armazenados localmente no seu dispositivo:</p>
                 <ul>
                     <li>Os dados permanecem no dispositivo até você desinstalar o aplicativo ou limpar os dados</li>
@@ -258,7 +284,7 @@
                     <li>Ao desinstalar o aplicativo, todos os dados locais serão removidos permanentemente</li>
                 </ul>
 
-                <h2>8. Direitos do Usuário (LGPD)</h2>
+                <h2>9. Direitos do Usuário (LGPD)</h2>
                 <p>De acordo com a Lei Geral de Proteção de Dados (LGPD), você tem os seguintes direitos:</p>
                 <ul>
                     <li><strong>Acesso:</strong> Confirmar se processamos seus dados pessoais</li>
@@ -270,19 +296,19 @@
                 </ul>
                 <p>Para exercer seus direitos, entre em contato através do e-mail: <strong>contato@drillo.app</strong></p>
 
-                <h2>9. Privacidade de Menores</h2>
+                <h2>10. Privacidade de Menores</h2>
                 <p>O Drillo não é destinado a menores de 18 anos. Não coletamos intencionalmente informações de menores. Se você acredita que um menor forneceu informações, entre em contato conosco para remoção imediata.</p>
 
-                <h2>10. Cookies e Tecnologias Similares</h2>
+                <h2>11. Cookies e Tecnologias Similares</h2>
                 <p>O aplicativo móvel não usa cookies tradicionais, mas pode usar tecnologias similares como:</p>
                 <ul>
                     <li><strong>SharedPreferences:</strong> Para armazenar configurações e preferências localmente</li>
                     <li><strong>Analytics:</strong> Para coletar dados anônimos de uso (pode ser desativado)</li>
                 </ul>
 
-                <h2>11. Serviços de Terceiros</h2>
+                <h2>12. Serviços de Terceiros</h2>
 
-                <h3>11.1 Google Play Services</h3>
+                <h3>12.1 Google Play Services</h3>
                 <p>Utilizamos os serviços da Google Play para:</p>
                 <ul>
                     <li>Distribuição do aplicativo</li>
@@ -291,13 +317,13 @@
                 </ul>
                 <p>Esses serviços têm suas próprias políticas de privacidade: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
 
-                <h3>11.2 Impressoras Térmicas</h3>
+                <h3>12.2 Impressoras Térmicas</h3>
                 <p>A conexão com impressoras térmicas via Bluetooth é feita localmente no dispositivo. Não enviamos dados de impressão para servidores externos.</p>
 
-                <h2>12. Transferência Internacional de Dados</h2>
+                <h2>13. Transferência Internacional de Dados</h2>
                 <p>Como seus dados comerciais são armazenados localmente, não há transferência internacional. Dados técnicos e de uso podem ser processados em servidores localizados fora do Brasil, sempre com garantias adequadas de proteção.</p>
 
-                <h2>13. Alterações nesta Política</h2>
+                <h2>14. Alterações nesta Política</h2>
                 <p>Podemos atualizar nossa Política de Privacidade periodicamente. Notificaremos você sobre mudanças significativas através de:</p>
                 <ul>
                     <li>Notificação no aplicativo</li>
@@ -306,7 +332,7 @@
                 </ul>
                 <p>Recomendamos revisar esta política periodicamente. O uso continuado após mudanças constitui aceitação da nova política.</p>
 
-                <h2>14. Base Legal para Processamento (LGPD)</h2>
+                <h2>15. Base Legal para Processamento (LGPD)</h2>
                 <p>Processamos seus dados com base em:</p>
                 <ul>
                     <li><strong>Consentimento:</strong> Ao aceitar esta política e usar o aplicativo</li>
@@ -315,14 +341,14 @@
                     <li><strong>Obrigação Legal:</strong> Quando exigido por lei</li>
                 </ul>
 
-                <h2>15. Contato</h2>
+                <h2>16. Contato</h2>
                 <p>Para questões sobre privacidade ou exercer seus direitos sob a LGPD:</p>
                 <ul>
                     <li><strong>E-mail:</strong> contato@drillo.app</li>
                     <li><strong>Website:</strong> <a href="index.html">drillo.app</a></li>
                 </ul>
 
-                <h2>16. Autoridade de Proteção de Dados</h2>
+                <h2>17. Autoridade de Proteção de Dados</h2>
                 <p>Se você não estiver satisfeito com nossa resposta às suas solicitações de privacidade, você tem o direito de registrar uma reclamação junto à Autoridade Nacional de Proteção de Dados (ANPD): <a href="https://www.gov.br/anpd" target="_blank">www.gov.br/anpd</a></p>
 
                 <hr style="margin: var(--spacing-xl) 0; border: none; border-top: 1px solid var(--gray-200);">
