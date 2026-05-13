@@ -1,0 +1,170 @@
+/* ============================================================
+   DRILLO BARBER — Legal Pages (Termos / Privacidade)
+   ============================================================ */
+
+.legal-main {
+  min-height: 100vh;
+  padding: 4rem 0 6rem;
+}
+
+.legal-container {
+  width: min(800px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+/* ── Header ── */
+.legal-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.legal-header h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin-bottom: 0.5rem;
+}
+.legal-meta {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+.legal-intro {
+  color: var(--muted-2);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 640px;
+}
+.legal-intro strong { color: var(--text); }
+
+/* ── Highlight box ── */
+.legal-highlight {
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radius);
+  background: rgba(201, 162, 39, 0.07);
+  border: 1px solid var(--border-gold);
+  color: var(--muted-2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+.legal-highlight strong { color: var(--gold-bright); }
+
+/* ── Callout ── */
+.legal-callout {
+  padding: 1rem 1.3rem;
+  border-radius: var(--radius-sm);
+  background: rgba(245, 158, 11, 0.07);
+  border-left: 3px solid var(--warn);
+  color: var(--muted-2);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 1.2rem 0;
+}
+.legal-callout strong { color: var(--warn); }
+
+/* ── Table of Contents ── */
+.legal-toc {
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.toc-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+.legal-toc ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  counter-reset: none;
+}
+.legal-toc a {
+  font-size: 0.9rem;
+  color: var(--muted-2);
+  transition: color 0.2s;
+  display: block;
+  padding: 0.15rem 0;
+}
+.legal-toc a:hover { color: var(--gold-bright); }
+
+/* ── Body ── */
+.legal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.legal-body section { scroll-margin-top: 80px; }
+
+.legal-body h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.legal-body h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--muted-2);
+  margin: 1.4rem 0 0.6rem;
+}
+
+.legal-body p {
+  color: var(--muted-2);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 0.9rem;
+}
+.legal-body p:last-child { margin-bottom: 0; }
+
+.legal-body ul,
+.legal-body ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1rem;
+  padding-left: 0;
+}
+.legal-body ul li,
+.legal-body ol li {
+  color: var(--muted-2);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  padding-left: 1.4rem;
+  position: relative;
+}
+.legal-body ul li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ── Footer nav ── */
+.legal-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .legal-main { padding: 2.5rem 0 4rem; }
+  .legal-header h1 { font-size: 2rem; }
+  .legal-footer-nav { flex-direction: column; }
+  .legal-footer-nav .button { text-align: center; justify-content: center; }
+}

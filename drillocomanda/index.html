@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drillo Comanda Garçom PDV | App para Restaurantes</title>
+    <meta name="description" content="Comanda digital, PDV, caixa e impressão térmica para bares, restaurantes, lanchonetes e pizzarias. Use offline e instale pela Google Play.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Drillo">
+    <meta name="theme-color" content="#B94C2D">
+    <meta name="application-name" content="Drillo Comanda Garçom PDV">
+    <meta name="apple-mobile-web-app-title" content="Drillo">
+    <link rel="canonical" href="https://drillo.com.br/drillocomanda/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Drillo">
+    <meta property="og:url" content="https://drillo.com.br/drillocomanda/">
+    <meta property="og:title" content="Drillo Comanda Garçom PDV | App para Restaurantes">
+    <meta property="og:description" content="Comanda digital, caixa, cardápio e impressão térmica em um app Android para bares, restaurantes, lanchonetes e pizzarias.">
+    <meta property="og:image" content="https://drillo.com.br/drillocomanda/images/Drillo_logo_512x512.png">
+    <meta property="og:image:alt" content="Logo do aplicativo Drillo Comanda Garçom PDV">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Drillo Comanda Garçom PDV | App para Restaurantes">
+    <meta name="twitter:description" content="Comanda digital, PDV, caixa e impressão térmica para bares, restaurantes, lanchonetes e pizzarias.">
+    <meta name="twitter:image" content="https://drillo.com.br/drillocomanda/images/Drillo_logo_512x512.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/Drillo_logo_512x512.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://drillo.com.br/#organization",
+                "name": "Drillo",
+                "url": "https://drillo.com.br/",
+                "logo": "https://drillo.com.br/images/Drillo_logo_512x512.png",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "contato@drillo.app",
+                    "contactType": "customer support",
+                    "availableLanguage": ["pt-BR"]
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://drillo.com.br/#website",
+                "name": "Drillo",
+                "url": "https://drillo.com.br/",
+                "publisher": {
+                    "@id": "https://drillo.com.br/#organization"
+                },
+                "inLanguage": "pt-BR"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://drillo.com.br/#app",
+                "name": "Drillo Comanda Garçom PDV",
+                "operatingSystem": "Android",
+                "applicationCategory": "BusinessApplication",
+                "url": "https://drillo.com.br/",
+                "downloadUrl": "https://play.google.com/store/apps/details?id=com.drillo.off",
+                "publisher": {
+                    "@id": "https://drillo.com.br/#organization"
+                },
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Drillo Free",
+                        "price": "0",
+                        "priceCurrency": "BRL"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Drillo PRO",
+                        "price": "29.99",
+                        "priceCurrency": "BRL"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://drillo.com.br/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "O Drillo funciona sem internet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sim. O Drillo salva os dados localmente no dispositivo e permite continuar registrando pedidos, cardapio e caixa mesmo quando a internet oscila."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "O app imprime em impressora termica?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O Drillo possui impressao termica via Bluetooth para comandas e pedidos, dependendo da compatibilidade da impressora e das permissoes do Android."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Qual tipo de estabelecimento pode usar?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "O Drillo foi pensado para bares, restaurantes, lanchonetes, pizzarias, food trucks, cafes, quiosques e operacoes com mesa, balcao ou delivery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Existe plano gratis?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sim. O plano Free permite comecar com limites de categorias, produtos e pedidos simultaneos. O plano PRO libera recursos avancados e limites maiores."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+    <script>
+        window.drilloTrackingConfig = {
+            defaultUtmSource: "landing",
+            defaultUtmMedium: "organic",
+            defaultUtmCampaign: "drillo_landing",
+            googleAdsSendTo: ""
+        };
+    </script>
+</head>
+<body>
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+    <nav class="navbar" aria-label="Navegação principal">
+        <div class="container nav-content">
+            <a href="#top" class="logo" aria-label="Ir para o início">
+                <img src="images/Drillo_logo_512x512.png" alt="Logo Drillo" class="logo-mark" loading="eager">
+                <span class="logo-text">
+                    <strong>Drillo</strong>
+                    <small>Comanda Garçom PDV</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-menu">
+                <a href="#problema">Problema</a>
+                <a href="#produto">Produto</a>
+                <a href="#fluxo">Fluxo</a>
+                <a href="#planos">Planos</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://play.google.com/store/apps/details?id=com.drillo.off" class="btn btn-nav" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="nav">
+                    <i class="fab fa-google-play" aria-hidden="true"></i>
+                    Instalar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <section class="hero" id="conteudo">
+            <div class="hero-pattern" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-copy" data-reveal>
+                    <span class="eyebrow">App Android para restaurantes</span>
+                    <h1>Comanda digital, PDV e caixa para vender sem bagunça.</h1>
+                    <p class="hero-lead">
+                        O Drillo organiza mesa, balcão, delivery, impressão térmica e fechamento de caixa em um fluxo simples para bares, restaurantes, pizzarias e lanchonetes.
+                    </p>
+
+                    <div class="hero-actions" aria-label="Ações principais">
+                        <a href="https://play.google.com/store/apps/details?id=com.drillo.off" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="hero_primary">
+                            <i class="fab fa-google-play" aria-hidden="true"></i>
+                            Instalar grátis
+                        </a>
+                        <a href="#produto" class="btn btn-secondary">
+                            <i class="fas fa-arrow-down" aria-hidden="true"></i>
+                            Ver recursos
+                        </a>
+                    </div>
+
+                    <ul class="hero-checks" aria-label="Principais benefícios">
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>Funciona offline quando a internet oscila</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>Imprime comandas em impressora térmica Bluetooth</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>Une atendimento, cardápio, caixa e relatórios</span></li>
+                    </ul>
+                </div>
+
+                <div class="hero-media" data-reveal data-parallax-scene>
+                    <div class="device-frame" data-parallax="10" role="img" aria-label="Prévia da tela do Drillo com pedidos, caixa e impressão térmica">
+                        <div class="phone-ui">
+                            <header class="phone-topbar">
+                                <div class="phone-brand">
+                                    <img src="images/Drillo_logo_512x512.png" alt="" aria-hidden="true">
+                                    <div>
+                                        <span>Drillo</span>
+                                        <strong>Operação ao vivo</strong>
+                                    </div>
+                                </div>
+                                <span class="phone-pill">Offline</span>
+                            </header>
+
+                            <div class="phone-tabs" aria-hidden="true">
+                                <span class="is-active">Pedidos</span>
+                                <span>Caixa</span>
+                                <span>Cardápio</span>
+                            </div>
+
+                            <div class="phone-summary">
+                                <article>
+                                    <span>Vendas hoje</span>
+                                    <strong>R$ 842,50</strong>
+                                </article>
+                                <article>
+                                    <span>Pedidos abertos</span>
+                                    <strong>8</strong>
+                                </article>
+                            </div>
+
+                            <div class="phone-order-list">
+                                <article class="phone-order is-hot">
+                                    <div>
+                                        <span>Mesa 07</span>
+                                        <strong>2 pizzas, 1 bebida</strong>
+                                    </div>
+                                    <em>R$ 74,90</em>
+                                </article>
+                                <article class="phone-order">
+                                    <div>
+                                        <span>Balcão</span>
+                                        <strong>Lanche + adicional</strong>
+                                    </div>
+                                    <em>R$ 38,00</em>
+                                </article>
+                                <article class="phone-order">
+                                    <div>
+                                        <span>Delivery</span>
+                                        <strong>Pedido em rota</strong>
+                                    </div>
+                                    <em>R$ 53,40</em>
+                                </article>
+                            </div>
+
+                            <footer class="phone-bottom">
+                                <span><i class="fas fa-print" aria-hidden="true"></i> Impressora pronta</span>
+                                <strong>Fechar caixa</strong>
+                            </footer>
+                        </div>
+                    </div>
+
+                    <div class="ops-note note-order" data-parallax="-14">
+                        <span>Mesa 07</span>
+                        <strong>Pedido enviado para produção</strong>
+                    </div>
+
+                    <div class="ops-note note-cash" data-parallax="18">
+                        <span>Caixa</span>
+                        <strong>Fechamento mais claro no fim do turno</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container proof-strip" data-reveal>
+                <article>
+                    <i class="fas fa-signal" aria-hidden="true"></i>
+                    <strong>Offline</strong>
+                    <span>continua vendendo sem internet</span>
+                </article>
+                <article>
+                    <i class="fas fa-print" aria-hidden="true"></i>
+                    <strong>Bluetooth</strong>
+                    <span>comandas na impressora térmica</span>
+                </article>
+                <article>
+                    <i class="fas fa-utensils" aria-hidden="true"></i>
+                    <strong>Atendimento</strong>
+                    <span>mesa, balcão e delivery</span>
+                </article>
+                <article>
+                    <i class="fas fa-cash-register" aria-hidden="true"></i>
+                    <strong>Caixa</strong>
+                    <span>vendas e fechamento no app</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section problem-section" id="problema">
+            <div class="container split-layout">
+                <div class="section-copy" data-reveal>
+                    <span class="eyebrow">O ponto crítico</span>
+                    <h2>Pedido em papel, caixa separado e internet instável travam a operação.</h2>
+                    <p>
+                        Quando o salão acelera, qualquer etapa solta vira atraso: pedido esquecido, comanda perdida, fechamento confuso e equipe perguntando a mesma coisa várias vezes.
+                    </p>
+                </div>
+
+                <div class="problem-board">
+                    <article class="problem-card" data-reveal>
+                        <span>01</span>
+                        <h3>Menos ruído entre salão e produção</h3>
+                        <p>O pedido nasce organizado e segue para o fluxo certo, sem depender de anotação solta.</p>
+                    </article>
+                    <article class="problem-card" data-reveal>
+                        <span>02</span>
+                        <h3>Mais velocidade no atendimento</h3>
+                        <p>A equipe abre mesa, lança item, imprime comanda e volta a atender com menos passos.</p>
+                    </article>
+                    <article class="problem-card" data-reveal>
+                        <span>03</span>
+                        <h3>Operação protegida da internet ruim</h3>
+                        <p>Os dados ficam locais no dispositivo para manter a venda andando quando a conexão falha.</p>
+                    </article>
+                    <article class="problem-card" data-reveal>
+                        <span>04</span>
+                        <h3>Fechamento de caixa mais confiável</h3>
+                        <p>Pedidos, pagamentos e relatórios ficam no mesmo sistema para reduzir retrabalho.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section product-section" id="produto">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <span class="eyebrow">Produto</span>
+                    <h2>Um app para a rotina inteira do atendimento.</h2>
+                    <p>O Drillo foi desenhado para pequenos negócios que precisam de controle sem transformar a operação em um projeto complicado.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card" data-reveal>
+                        <i class="fas fa-receipt" aria-hidden="true"></i>
+                        <h3>Comanda digital</h3>
+                        <p>Abra pedidos por mesa, balcão ou delivery com status claro para a equipe.</p>
+                    </article>
+                    <article class="feature-card" data-reveal>
+                        <i class="fas fa-cash-register" aria-hidden="true"></i>
+                        <h3>PDV e caixa</h3>
+                        <p>Registre vendas, acompanhe pagamentos e tenha mais segurança no fechamento.</p>
+                    </article>
+                    <article class="feature-card" data-reveal>
+                        <i class="fas fa-layer-group" aria-hidden="true"></i>
+                        <h3>Cardápio organizado</h3>
+                        <p>Cadastre categorias, produtos, preços e adicionais para vender com menos confusão.</p>
+                    </article>
+                    <article class="feature-card" data-reveal>
+                        <i class="fas fa-print" aria-hidden="true"></i>
+                        <h3>Impressão térmica</h3>
+                        <p>Imprima pedidos e comandas em impressoras Bluetooth compatíveis.</p>
+                    </article>
+                    <article class="feature-card" data-reveal>
+                        <i class="fas fa-network-wired" aria-hidden="true"></i>
+                        <h3>Modo equipe</h3>
+                        <p>Servidor e garçom trabalham na rede local para circular pedidos com mais ritmo.</p>
+                    </article>
+                    <article class="feature-card" data-reveal>
+                        <i class="fas fa-chart-column" aria-hidden="true"></i>
+                        <h3>Relatórios</h3>
+                        <p>Entenda movimento, caixa e vendas do dia com informações mais fáceis de consultar.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section workflow-section" id="fluxo">
+            <div class="container workflow-layout">
+                <div class="section-copy" data-reveal>
+                    <span class="eyebrow">Fluxo de venda</span>
+                    <h2>Da instalação ao fechamento do dia, sem perder tempo.</h2>
+                    <p>Comece pequeno, valide no balcão e leve para o salão quando sua equipe estiver pronta.</p>
+                </div>
+
+                <div class="workflow-steps">
+                    <article class="workflow-step" data-reveal>
+                        <span>1</span>
+                        <h3>Instale pela Google Play</h3>
+                        <p>Baixe o app Android e comece pelo plano grátis.</p>
+                    </article>
+                    <article class="workflow-step" data-reveal>
+                        <span>2</span>
+                        <h3>Monte seu cardápio</h3>
+                        <p>Cadastre categorias, produtos, preços e adicionais.</p>
+                    </article>
+                    <article class="workflow-step" data-reveal>
+                        <span>3</span>
+                        <h3>Atenda e imprima</h3>
+                        <p>Lance pedidos, envie comandas e mantenha o fluxo visível.</p>
+                    </article>
+                    <article class="workflow-step" data-reveal>
+                        <span>4</span>
+                        <h3>Feche com controle</h3>
+                        <p>Acompanhe caixa, vendas e relatórios no mesmo app.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section use-cases-section" id="casos">
+            <div class="container">
+                <div class="section-heading" data-reveal>
+                    <span class="eyebrow">Casos de uso</span>
+                    <h2>Feito para negócios que vendem no ritmo da hora.</h2>
+                    <p>Use o Drillo em operações com mesa, balcão, retirada, delivery ou eventos.</p>
+                </div>
+
+                <div class="case-grid">
+                    <article class="case-card" data-reveal>
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
+                        <h3>Restaurantes e bares</h3>
+                        <p>Pedidos por mesa, comanda digital, impressão para produção e fechamento de caixa.</p>
+                    </article>
+                    <article class="case-card" data-reveal>
+                        <i class="fas fa-pizza-slice" aria-hidden="true"></i>
+                        <h3>Pizzarias e lanchonetes</h3>
+                        <p>Produtos, adicionais, balcão, delivery e relatórios para acompanhar o giro do dia.</p>
+                    </article>
+                    <article class="case-card" data-reveal>
+                        <i class="fas fa-store" aria-hidden="true"></i>
+                        <h3>Food trucks e quiosques</h3>
+                        <p>Venda em movimento com controle local, impressão Bluetooth e operação simples.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section plans-section" id="planos">
+            <div class="container">
+                <div class="section-heading section-heading-center" data-reveal>
+                    <span class="eyebrow">Planos</span>
+                    <h2>Comece grátis. Ative o PRO quando precisar escalar.</h2>
+                    <p>Uma porta de entrada simples para testar na operação real antes de contratar recursos avançados.</p>
+                </div>
+
+                <div class="plans-grid">
+                    <article class="plan-card" data-reveal>
+                        <div class="plan-head">
+                            <span>Entrada</span>
+                            <h3>Free</h3>
+                            <p><strong>R$ 0</strong><small>para começar</small></p>
+                        </div>
+                        <ul>
+                            <li>Até 5 categorias</li>
+                            <li>Até 30 produtos</li>
+                            <li>5 pedidos simultâneos</li>
+                            <li>Controle de caixa</li>
+                            <li>Impressão térmica</li>
+                            <li>Relatórios básicos</li>
+                        </ul>
+                        <a href="https://play.google.com/store/apps/details?id=com.drillo.off" class="btn btn-secondary btn-block" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="plan_free">
+                            <i class="fab fa-google-play" aria-hidden="true"></i>
+                            Instalar grátis
+                        </a>
+                    </article>
+
+                    <article class="plan-card plan-card-featured" data-reveal>
+                        <div class="plan-label">Recursos avançados</div>
+                        <div class="plan-head">
+                            <span>Operação ativa</span>
+                            <h3>PRO</h3>
+                            <p><strong>R$ 29,99</strong><small>por mês</small></p>
+                        </div>
+                        <ul>
+                            <li>Categorias ilimitadas</li>
+                            <li>Produtos ilimitados</li>
+                            <li>Pedidos ilimitados</li>
+                            <li>Controle de caixa avançado</li>
+                            <li>Relatórios completos</li>
+                            <li>Suporte prioritário</li>
+                        </ul>
+                        <a href="https://play.google.com/store/apps/details?id=com.drillo.off" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="plan_pro">
+                            <i class="fab fa-google-play" aria-hidden="true"></i>
+                            Assinar PRO
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq-section" id="faq">
+            <div class="container faq-layout">
+                <div class="section-copy" data-reveal>
+                    <span class="eyebrow">FAQ</span>
+                    <h2>Dúvidas rápidas antes de instalar.</h2>
+                    <p>Respostas diretas para decidir se o Drillo faz sentido para sua operação.</p>
+                </div>
+
+                <div class="faq-list">
+                    <article class="faq-item" data-reveal>
+                        <h3>O Drillo funciona sem internet?</h3>
+                        <p>Sim. O app salva os dados localmente no dispositivo, então você pode registrar pedidos, organizar o cardápio e controlar o caixa mesmo quando a internet oscila.</p>
+                    </article>
+                    <article class="faq-item" data-reveal>
+                        <h3>Consigo imprimir comandas?</h3>
+                        <p>Sim. O Drillo tem impressão térmica via Bluetooth para pedidos e comandas, dependendo da compatibilidade da impressora e das permissões do Android.</p>
+                    </article>
+                    <article class="faq-item" data-reveal>
+                        <h3>Qual tipo de estabelecimento pode usar?</h3>
+                        <p>O app foi pensado para bares, restaurantes, lanchonetes, pizzarias, food trucks, cafés, quiosques e operações com mesa, balcão ou delivery.</p>
+                    </article>
+                    <article class="faq-item" data-reveal>
+                        <h3>Existe plano grátis?</h3>
+                        <p>Sim. O plano Free permite começar com limites de categorias, produtos e pedidos simultâneos. O plano PRO libera recursos avançados e limites maiores.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section final-cta-section">
+            <div class="container final-cta" data-reveal>
+                <div>
+                    <span class="eyebrow">Próximo passo</span>
+                    <h2>Instale o Drillo e teste na próxima rodada de atendimento.</h2>
+                    <p>Organize pedidos, caixa, impressão e relatórios em um app feito para a rotina de quem vende comida todos os dias.</p>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=com.drillo.off" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="final_cta">
+                    <i class="fab fa-google-play" aria-hidden="true"></i>
+                    Ir para Google Play
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="#top" class="logo footer-logo" aria-label="Voltar ao topo">
+                    <img src="images/Drillo_logo_512x512.png" alt="Logo Drillo" class="logo-mark" loading="lazy">
+                    <span class="logo-text">
+                        <strong>Drillo</strong>
+                        <small>Comanda Garçom PDV</small>
+                    </span>
+                </a>
+                <p>Comanda digital, PDV e controle de caixa para bares, restaurantes, lanchonetes e pizzarias.</p>
+            </div>
+
+            <div>
+                <h3>Produto</h3>
+                <a href="#produto">Recursos</a>
+                <a href="#fluxo">Fluxo</a>
+                <a href="#planos">Planos</a>
+            </div>
+
+            <div>
+                <h3>Contato</h3>
+                <a href="mailto:contato@drillo.app">contato@drillo.app</a>
+                <a href="https://play.google.com/store/apps/details?id=com.drillo.off" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="footer_contact">Google Play</a>
+            </div>
+
+            <div>
+                <h3>Legal</h3>
+                <a href="politica-de-privacidade.html">Política de privacidade</a>
+                <a href="termos-de-uso.html">Termos de uso</a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> Drillo. Todos os direitos reservados.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.drillo.off" class="footer-play-link" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="footer_bottom">Instalar pela Google Play</a>
+        </div>
+    </footer>
+
+    <a href="https://play.google.com/store/apps/details?id=com.drillo.off" class="mobile-install-bar" target="_blank" rel="noopener noreferrer" data-play-link data-cta-location="mobile_bar">
+        <i class="fab fa-google-play" aria-hidden="true"></i>
+        Instalar Drillo
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
