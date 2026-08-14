@@ -296,11 +296,34 @@ p {
     background: var(--paper-strong);
 }
 
+.btn-desktop {
+    border-color: rgba(0, 109, 119, 0.28);
+    background: rgba(0, 109, 119, 0.08);
+    color: var(--teal);
+}
+
+.btn-desktop:hover {
+    border-color: var(--teal);
+    background: rgba(0, 109, 119, 0.14);
+}
+
+.btn-version {
+    padding: 0.2rem 0.42rem;
+    border-radius: 999px;
+    background: rgba(0, 109, 119, 0.12);
+    font-size: 0.68rem;
+    font-weight: 900;
+}
+
 .btn-nav {
     min-height: 2.9rem;
     padding: 0.76rem 1rem;
     background: var(--ink);
     color: var(--paper);
+}
+
+.btn-nav-desktop {
+    background: var(--teal);
 }
 
 .btn-block {
@@ -727,6 +750,191 @@ p {
     padding: 1.3rem;
 }
 
+.desktop-section {
+    background: linear-gradient(135deg, #eef5f0 0%, #fffdf8 72%);
+}
+
+.desktop-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 2rem;
+    align-items: center;
+    padding: 2.2rem;
+    border: 1px solid rgba(0, 109, 119, 0.16);
+    border-radius: var(--radius);
+    background: rgba(255, 253, 248, 0.72);
+    box-shadow: var(--shadow-sm);
+}
+
+.desktop-copy h2 {
+    max-width: 12ch;
+}
+
+.desktop-copy > p {
+    max-width: 35rem;
+    margin-top: 1rem;
+    font-size: 1.06rem;
+}
+
+.desktop-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 1.35rem;
+}
+
+.desktop-release {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    color: var(--teal);
+    font-size: 0.82rem;
+    font-weight: 900;
+}
+
+.desktop-note {
+    font-size: 0.86rem !important;
+}
+
+.desktop-preview {
+    overflow: hidden;
+    border: 1px solid rgba(23, 20, 18, 0.16);
+    border-radius: var(--radius);
+    background: #1c1815;
+    box-shadow: 0 24px 55px rgba(28, 24, 21, 0.22);
+}
+
+.desktop-window-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    min-height: 2.45rem;
+    padding: 0 0.9rem;
+    color: rgba(255, 253, 248, 0.74);
+    font-size: 0.76rem;
+}
+
+.desktop-window-bar strong {
+    margin-left: 0.35rem;
+    color: var(--paper);
+    font-size: 0.78rem;
+}
+
+.window-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+}
+
+.window-dot-red { background: #e8755f; }
+.window-dot-yellow { background: #e8a64a; }
+.window-dot-green { background: #6dbb82; }
+
+.desktop-window-body {
+    display: grid;
+    grid-template-columns: 8.4rem minmax(0, 1fr);
+    min-height: 17.2rem;
+    background: #f4efe7;
+}
+
+.desktop-window-sidebar {
+    display: grid;
+    align-content: start;
+    gap: 0.42rem;
+    padding: 1rem 0.75rem;
+    border-right: 1px solid rgba(23, 20, 18, 0.1);
+    background: #fffdf8;
+}
+
+.desktop-window-brand,
+.desktop-window-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.48rem;
+    min-width: 0;
+    padding: 0.54rem 0.58rem;
+    border-radius: 5px;
+    color: var(--ink-soft);
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.desktop-window-brand {
+    margin-bottom: 0.6rem;
+    color: var(--brand-dark);
+    font-family: "Sora", sans-serif;
+    font-size: 0.8rem;
+}
+
+.desktop-window-brand i { color: var(--brand); }
+
+.desktop-window-nav.is-active {
+    background: var(--brand-soft);
+    color: var(--brand-dark);
+}
+
+.desktop-window-main {
+    min-width: 0;
+    padding: 1rem;
+}
+
+.desktop-window-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--line);
+    font-family: "Sora", sans-serif;
+    font-size: 1.15rem;
+}
+
+.desktop-window-heading em {
+    padding: 0.28rem 0.48rem;
+    border-radius: 999px;
+    background: rgba(31, 122, 77, 0.12);
+    color: var(--green);
+    font-family: "Manrope", sans-serif;
+    font-size: 0.66rem;
+    font-style: normal;
+    font-weight: 900;
+}
+
+.desktop-window-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.desktop-window-cards article {
+    display: grid;
+    gap: 0.34rem;
+    padding: 0.85rem;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--brand);
+    border-radius: 5px;
+    background: var(--paper-strong);
+}
+
+.desktop-window-cards span {
+    color: var(--ink);
+    font-weight: 900;
+}
+
+.desktop-window-cards strong {
+    color: var(--brand-dark);
+    font-family: "Sora", sans-serif;
+    font-size: 1.1rem;
+}
+
+.desktop-window-cards small {
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
 .feature-card i,
 .case-card i {
     display: grid;
@@ -950,6 +1158,24 @@ p {
     color: rgba(255, 253, 248, 0.76);
 }
 
+.final-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    flex: 0 0 auto;
+}
+
+.final-cta .btn-desktop {
+    border-color: rgba(255, 253, 248, 0.25);
+    background: rgba(255, 253, 248, 0.1);
+    color: var(--paper);
+}
+
+.final-cta .btn-desktop:hover {
+    border-color: rgba(255, 253, 248, 0.5);
+    background: rgba(255, 253, 248, 0.18);
+}
+
 .footer {
     padding: 4rem 0 6rem;
     background: var(--canvas);
@@ -1028,7 +1254,8 @@ p {
     .feature-grid,
     .case-grid,
     .plans-grid,
-    .footer-grid {
+    .footer-grid,
+    .desktop-panel {
         grid-template-columns: 1fr;
     }
 
@@ -1108,6 +1335,10 @@ p {
         display: grid;
         align-items: start;
     }
+
+    .final-cta-actions {
+        align-items: stretch;
+    }
 }
 
 @media (max-width: 640px) {
@@ -1164,7 +1395,33 @@ p {
     }
 
     .hero-actions .btn,
-    .btn-large {
+    .btn-large,
+    .final-cta-actions .btn {
+        width: 100%;
+    }
+
+    .desktop-panel {
+        padding: 1.2rem;
+    }
+
+    .desktop-copy h2 {
+        max-width: none;
+    }
+
+    .desktop-window-body {
+        grid-template-columns: 6.5rem minmax(0, 1fr);
+    }
+
+    .desktop-window-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .desktop-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .desktop-actions .btn {
         width: 100%;
     }
 

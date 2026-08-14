@@ -441,10 +441,53 @@ const setupPlayStoreTracking = () => {
     });
 };
 
+const setupDesktopDownload = () => {
+    const desktopLinks = Array.from(document.querySelectorAll("[data-desktop-link]"));
+    const versionNodes = Array.from(document.querySelectorAll("[data-desktop-version]"));
+
+    if (desktopLinks.length === 0) {
+        return;
+    }
+
+    const manifestUrl = "https://drillo-comanda-mobile-2472a.web.app/desktop/manifest.json";
+    const fallbackUrl = "https://drillo-comanda-mobile-2472a.web.app/desktop/releases/DrilloDesktopSetup-1.7.13.exe";
+
+    desktopLinks.forEach((link) => {
+        link.href = fallbackUrl;
+    });
+
+    fetch(manifestUrl, { cache: "no-store" })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Manifest request failed: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((manifest) => {
+            if (!manifest || typeof manifest.downloadUrl !== "string") {
+                return;
+            }
+
+            desktopLinks.forEach((link) => {
+                link.href = manifest.downloadUrl;
+            });
+
+            if (manifest.version) {
+                versionNodes.forEach((node) => {
+                    node.textContent = String(manifest.version);
+                });
+            }
+        })
+        .catch(() => {
+            // The static fallback keeps the CTA usable when the manifest is unavailable.
+        });
+};
+
 setupCounters();
 setupCarousel();
 setupParallax();
 setupPlayStoreTracking();
+setupDesktopDownload();
 
 const yearNode = document.querySelector("#current-year");
 
