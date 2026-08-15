@@ -1236,6 +1236,156 @@ p {
     display: none;
 }
 
+.hero-risk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1.2rem;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    font-weight: 700;
+}
+
+.hero-risk span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.hero-risk i {
+    color: var(--green);
+}
+
+.trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-top: 1.8rem;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.38rem 0.8rem;
+    border-radius: var(--radius);
+    background: rgba(255, 253, 248, 0.72);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.trust-badge i {
+    color: var(--brand-dark);
+}
+
+.testimonials-comanda-section {
+    background: linear-gradient(180deg, #fffdf8, #f4efe7);
+}
+
+.testimonials-comanda-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.95rem;
+}
+
+.testimonial-comanda {
+    padding: 1.8rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 253, 248, 0.88);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.testimonial-comanda:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-comanda.featured {
+    background: #1c1815;
+    color: var(--paper);
+    border-color: rgba(255, 253, 248, 0.12);
+    box-shadow: 0 24px 70px rgba(28, 24, 21, 0.18);
+}
+
+.t-stars {
+    color: #e8a64a;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+}
+
+.testimonial-comanda p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+}
+
+.testimonial-comanda.featured p {
+    color: rgba(255, 253, 248, 0.82);
+}
+
+.testimonial-comanda footer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.t-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85rem;
+    color: var(--brand-dark);
+    background: rgba(185, 76, 45, 0.12);
+    border: 1px solid rgba(185, 76, 45, 0.2);
+}
+
+.testimonial-comanda.featured .t-avatar {
+    color: #ffd692;
+    background: rgba(232, 166, 74, 0.16);
+    border-color: rgba(232, 166, 74, 0.25);
+}
+
+.testimonial-comanda footer strong {
+    display: block;
+    font-size: 0.85rem;
+}
+
+.testimonial-comanda footer span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.testimonial-comanda.featured footer span {
+    color: rgba(255, 253, 248, 0.6);
+}
+
+.plan-risk {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-weight: 700;
+    margin-top: 0.6rem;
+}
+
+.plan-card-featured .plan-risk {
+    color: rgba(255, 253, 248, 0.6);
+}
+
 [data-reveal] {
     opacity: 0;
     translate: 0 22px;
@@ -1491,7 +1641,29 @@ p {
     }
 
     .mobile-install-bar {
-        display: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 60;
+        padding: 0.85rem 1rem;
+        background: var(--brand);
+        color: var(--paper-strong);
+        font-weight: 900;
+        font-size: 0.95rem;
+        box-shadow: 0 -8px 24px rgba(37, 26, 18, 0.18);
+    }
+
+    .mobile-install-bar i {
+        font-size: 1.1rem;
+    }
+
+    .testimonials-comanda-grid {
+        grid-template-columns: 1fr;
     }
 }
 

@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
 
-    <title>Drillo | Apps Android e Windows para Negócios Locais</title>
-    <meta name="description" content="A Drillo cria apps offline para pequenos negócios. Drillo Barber para barbearias e Drillo Comanda para restaurantes, agora também com servidor Windows." />
-    <meta name="keywords" content="drillo, apps para barbearia, app para restaurante, sistema offline, gestão para pequenos negócios" />
+    <title>Drillo | Apps de Gestão Offline para Barbearias e Restaurantes</title>
+    <meta name="description" content="Apps Android e Windows que funcionam offline. Drillo Barber para barbearias e Drillo Comanda para restaurantes. Comece grátis, sem mensalidade, sem cartão." />
+    <meta name="keywords" content="drillo, app para barbearia, app para restaurante, sistema offline, comanda digital, pdv offline, gestão para pequenos negócios" />
     <link rel="canonical" href="https://drillo.com.br/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Drillo" />
-    <meta property="og:title" content="Drillo | Apps Android e Windows para Negócios Locais" />
-    <meta property="og:description" content="Apps offline para barbearias e restaurantes, com Drillo Desktop para operar a loja no Windows." />
+    <meta property="og:title" content="Drillo | Apps de Gestão Offline para Barbearias e Restaurantes" />
+    <meta property="og:description" content="Apps offline para barbearias e restaurantes. Comece grátis hoje, sem cartão e sem mensalidade." />
     <meta property="og:image" content="https://drillo.com.br/drillocomanda/images/Drillo_logo_512x512.png" />
     <meta property="og:url" content="https://drillo.com.br/" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Drillo | Apps de Gestão para Negócios Locais" />
+    <meta name="twitter:title" content="Drillo | Apps de Gestão Offline para Negócios Locais" />
+    <meta name="twitter:description" content="Apps offline para barbearias e restaurantes. Comece grátis hoje." />
     <meta name="twitter:image" content="https://drillo.com.br/drillocomanda/images/Drillo_logo_512x512.png" />
 
     <link rel="icon" type="image/png" href="drillocomanda/images/favicon.png" />
@@ -45,6 +46,8 @@
         --ember:       #b94c2d;
         --ember-light: #e06040;
         --ember-glow:  rgba(185,76,45,0.22);
+        --teal:        #3da894;
+        --teal-light:  #8fe0d0;
         color-scheme: dark;
       }
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,9 +81,10 @@
       }
       .nav-brand { display: flex; align-items: center; gap: 0.65rem; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.04em; }
       .nav-brand img { width: 30px; height: 30px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(193,82,46,0.4)); }
-      .nav-links { display: flex; gap: 1.8rem; font-size: 0.88rem; font-weight: 500; color: var(--muted); }
+      .nav-links { display: flex; gap: 1.8rem; font-size: 0.88rem; font-weight: 500; color: var(--muted); align-items: center; }
       .nav-links a:hover { color: var(--text); }
       .nav-desktop { color: var(--flame-light); }
+      .nav-mobile-toggle { display: none; }
 
       /* ── HERO ── */
       .hero {
@@ -101,7 +105,7 @@
         background: radial-gradient(ellipse, rgba(201,162,39,0.07), transparent 65%);
         pointer-events: none; z-index: 1;
       }
-      .hero-content { position: relative; z-index: 2; max-width: 760px; }
+      .hero-content { position: relative; z-index: 2; max-width: 820px; }
 
       .eyebrow {
         display: inline-flex; align-items: center; gap: 0.5rem;
@@ -119,7 +123,7 @@
 
       .hero h1 {
         font-family: 'Cormorant Garamond', Georgia, serif;
-        font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700;
+        font-size: clamp(2.8rem, 7.5vw, 6rem); font-weight: 700;
         line-height: 1.02; letter-spacing: -0.01em; margin-bottom: 1.4rem;
       }
       .hero h1 em {
@@ -127,15 +131,60 @@
         background: linear-gradient(135deg, var(--flame-light), var(--gold-bright));
         -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       }
-      .hero-lead { color: var(--muted-2); font-size: clamp(1rem, 2vw, 1.18rem); max-width: 560px; margin-inline: auto; margin-bottom: 2.8rem; }
+      .hero-lead { color: var(--muted-2); font-size: clamp(1rem, 2vw, 1.2rem); max-width: 580px; margin-inline: auto; margin-bottom: 2.2rem; }
+
+      .hero-cta-row {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero-cta-primary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.9rem 1.8rem; border-radius: 999px; font-weight: 700; font-size: 1rem;
+        color: var(--bg); background: linear-gradient(135deg, var(--flame-light), var(--flame));
+        box-shadow: 0 8px 28px var(--flame-glow); transition: transform 0.18s, box-shadow 0.18s; min-height: 52px;
+      }
+      .hero-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px var(--flame-glow); }
+      .hero-cta-secondary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.9rem 1.8rem; border-radius: 999px; font-weight: 700; font-size: 1rem;
+        color: var(--text); border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.04);
+        transition: background 0.2s, border-color 0.2s; min-height: 52px;
+      }
+      .hero-cta-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.22); }
+
+      .hero-risk {
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem;
+        font-size: 0.82rem; color: var(--muted); margin-bottom: 2.8rem;
+      }
+      .hero-risk span { display: inline-flex; align-items: center; gap: 0.4rem; }
+      .hero-risk svg { flex-shrink: 0; color: var(--teal-light); }
+
       .hero-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
       .hero-badge { padding: 0.3rem 0.9rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted-2); }
 
+      /* ── TRUST BAR ── */
+      .trust-bar {
+        width: min(1160px, calc(100% - 2rem)); margin-inline: auto;
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+        border: 1px solid var(--border); border-radius: 1.2rem;
+        background: var(--surface); overflow: hidden;
+      }
+      .trust-item {
+        display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+        padding: 1.6rem 1rem; text-align: center;
+        border-right: 1px solid var(--border);
+      }
+      .trust-item:last-child { border-right: none; }
+      .trust-num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--flame-light); line-height: 1; }
+      .trust-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+
       /* ── SECTION ── */
       .section { width: min(1160px, calc(100% - 2rem)); margin-inline: auto; padding: 5rem 0; }
+      .section-heading-center { text-align: center; max-width: 620px; margin-inline: auto; }
       .section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; }
       .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 700; line-height: 1.08; margin-bottom: 1rem; }
       .section-sub { color: var(--muted); font-size: 1.02rem; max-width: 500px; margin-bottom: 3.5rem; }
+      .section-heading-center .section-sub { margin-inline: auto; }
 
       /* ── PRODUCT CARDS ── */
       .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
@@ -181,17 +230,70 @@
       .card-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 40px var(--accent-glow); }
       .card-cta-secondary { margin-top: 0.7rem; color: var(--accent-bright); background: transparent; border: 1px solid var(--accent); box-shadow: none; }
       .card-cta-secondary:hover { background: var(--accent-bg); box-shadow: none; }
+      .card-mini-risk { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 0.8rem; }
 
       /* ── DIVIDER ── */
       .divider { width: min(1160px, calc(100% - 2rem)); margin-inline: auto; height: 1px; background: var(--border); }
 
+      /* ── HOW IT WORKS ── */
+      .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1rem; }
+      .step-card {
+        padding: 2rem; border-radius: 1.2rem; border: 1px solid var(--border);
+        background: var(--surface); transition: border-color 0.25s, transform 0.25s;
+        position: relative;
+      }
+      .step-card:hover { border-color: rgba(193,82,46,0.25); transform: translateY(-4px); }
+      .step-num {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 3rem; font-weight: 700; line-height: 1;
+        background: linear-gradient(135deg, var(--flame-light), var(--gold-bright));
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        margin-bottom: 0.8rem;
+      }
+      .step-card h3 { font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+      .step-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+      /* ── COMPARISON ── */
+      .compare-wrap { border: 1px solid var(--border); border-radius: 1.2rem; overflow: hidden; background: var(--surface); }
+      .compare-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+      .compare-table th, .compare-table td { padding: 1rem 1.3rem; text-align: left; border-bottom: 1px solid var(--border); }
+      .compare-table th { font-weight: 800; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+      .compare-table th:not(:first-child) { text-align: center; font-size: 1rem; text-transform: none; letter-spacing: 0; }
+      .compare-table th.col-barber { color: var(--gold-bright); }
+      .compare-table th.col-comanda { color: var(--ember-light); }
+      .compare-table td:not(:first-child) { text-align: center; color: var(--muted-2); }
+      .compare-table tr:last-child td { border-bottom: none; }
+      .compare-table .check { color: var(--teal-light); font-size: 1.1rem; }
+      .compare-table .dash { color: var(--muted); opacity: 0.4; }
+      .compare-table td:first-child { color: var(--text); font-weight: 500; }
+      .compare-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
       /* ── VALUES ── */
       .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
-      .value-card { padding: 1.8rem; border-radius: 1.2rem; border: 1px solid var(--border); background: var(--surface); transition: border-color 0.25s; }
-      .value-card:hover { border-color: rgba(193,82,46,0.25); }
+      .value-card { padding: 1.8rem; border-radius: 1.2rem; border: 1px solid var(--border); background: var(--surface); transition: border-color 0.25s, transform 0.25s; }
+      .value-card:hover { border-color: rgba(193,82,46,0.25); transform: translateY(-4px); }
       .value-icon { font-size: 1.8rem; margin-bottom: 1rem; }
       .value-card h3 { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
       .value-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+      /* ── TESTIMONIALS ── */
+      .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+      .testimonial-card {
+        padding: 1.8rem; border-radius: 1.2rem; border: 1px solid var(--border);
+        background: var(--surface); transition: border-color 0.25s, transform 0.25s;
+      }
+      .testimonial-card:hover { border-color: rgba(193,82,46,0.2); transform: translateY(-4px); }
+      .testimonial-stars { color: var(--gold-bright); font-size: 0.9rem; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+      .testimonial-card p { color: var(--muted-2); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1.2rem; font-style: italic; }
+      .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+      .testimonial-avatar {
+        width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 800; font-size: 0.85rem; color: var(--flame-light);
+        background: rgba(193,82,46,0.12); border: 1px solid rgba(193,82,46,0.2);
+      }
+      .testimonial-author strong { display: block; font-size: 0.85rem; }
+      .testimonial-author span { display: block; font-size: 0.75rem; color: var(--muted); }
 
       /* ── CTA BAND ── */
       .cta-band {
@@ -224,7 +326,7 @@
         transition: background 0.2s, border-color 0.2s; min-height: 48px;
       }
       .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.14); }
-      .btn-desktop { color: var(--bg); background: linear-gradient(135deg, #8fe0d0, #3da894); }
+      .btn-desktop { color: var(--bg); background: linear-gradient(135deg, var(--teal-light), var(--teal)); }
       .btn-desktop:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(61,168,148,0.26); }
       .desktop-version { margin-left: 0.2rem; font-size: 0.75rem; opacity: 0.78; }
 
@@ -244,18 +346,32 @@
       .reveal.visible { opacity: 1; transform: none; }
 
       /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .trust-bar { grid-template-columns: repeat(2, 1fr); }
+        .trust-item:nth-child(2) { border-right: none; }
+        .trust-item:nth-child(1), .trust-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+        .steps-grid { grid-template-columns: 1fr; }
+        .testimonials-grid { grid-template-columns: 1fr; }
+      }
       @media (max-width: 768px) {
         .products-grid { grid-template-columns: 1fr; }
         .values-grid { grid-template-columns: 1fr; }
         .cta-band { flex-direction: column; text-align: center; padding: 2.2rem 1.5rem; }
         .cta-band-actions { justify-content: center; }
         .nav-links { display: none; }
-        .hero h1 { font-size: clamp(2.4rem, 12vw, 3.8rem); }
+        .hero h1 { font-size: clamp(2.2rem, 11vw, 3.6rem); }
+        .compare-wrap { overflow-x: auto; }
+        .compare-table { min-width: 480px; }
       }
       @media (max-width: 480px) {
         .card-body { padding: 1.5rem; }
         .cta-band-actions { flex-direction: column; width: 100%; }
-        .btn-primary, .btn-secondary { justify-content: center; }
+        .btn-primary, .btn-secondary, .btn-desktop { justify-content: center; }
+        .hero-cta-row { flex-direction: column; width: 100%; }
+        .hero-cta-primary, .hero-cta-secondary { justify-content: center; }
+        .trust-bar { grid-template-columns: 1fr; }
+        .trust-item { border-right: none; border-bottom: 1px solid var(--border); }
+        .trust-item:last-child { border-bottom: none; }
       }
     </style>
   </head>
@@ -268,6 +384,8 @@
       </a>
       <div class="nav-links">
         <a href="#produtos">Produtos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#comparar">Comparar</a>
         <a href="#valores">Sobre</a>
         <a href="drillobarber/index.html">Drillo Barber</a>
         <a href="drillocomanda/index.html">Drillo Comanda</a>
@@ -279,23 +397,60 @@
       <div class="hero-orb-1" aria-hidden="true"></div>
       <div class="hero-orb-2" aria-hidden="true"></div>
       <div class="hero-content reveal">
-        <p class="eyebrow">Apps para negócios locais</p>
+        <p class="eyebrow">Apps para negócios locais · Feito no Brasil</p>
         <h1 id="hero-title">
-          Gestão simples para<br>
-          negócios <em>reais.</em>
+          Organize seu negócio<br>
+          em minutos. <em>Venda</em><br>
+          sem complicação.
         </h1>
         <p class="hero-lead">
-          A Drillo cria apps Android que funcionam offline, são rápidos de aprender
+          Apps Android e Windows que funcionam offline, são rápidos de aprender
           e resolvem os problemas de quem trabalha no balcão todo dia.
+          Comece grátis — sem cartão, sem mensalidade.
         </p>
+        <div class="hero-cta-row">
+          <a class="hero-cta-primary" href="#produtos">
+            Escolher meu app
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="hero-cta-secondary" href="#como-funciona">
+            Como funciona
+          </a>
+        </div>
+        <div class="hero-risk">
+          <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Sem cartão de crédito</span>
+          <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Plano grátis permanente</span>
+          <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Funciona sem internet</span>
+        </div>
         <div class="hero-badges">
           <span class="hero-badge">100% Offline</span>
           <span class="hero-badge">Android + Windows</span>
-          <span class="hero-badge">Sem mensalidade pra começar</span>
-          <span class="hero-badge">Feito no Brasil 🇧🇷</span>
+          <span class="hero-badge">Impressão Bluetooth</span>
+          <span class="hero-badge">Dados no seu dispositivo</span>
         </div>
       </div>
     </section>
+
+    <div class="section" style="padding-top: 0; padding-bottom: 3rem;">
+      <div class="trust-bar reveal">
+        <div class="trust-item">
+          <span class="trust-num">2</span>
+          <span class="trust-label">Apps especializados</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">100%</span>
+          <span class="trust-label">Offline, sem internet</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">R$ 0</span>
+          <span class="trust-label">Para começar grátis</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">Android + Windows</span>
+          <span class="trust-label">Celular e computador</span>
+        </div>
+      </div>
+    </div>
 
     <section class="section" id="produtos" aria-labelledby="produtos-title">
       <div class="reveal">
@@ -326,6 +481,7 @@
               Conhecer o Drillo Barber
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
+            <p class="card-mini-risk">Grátis · Sem cartão · Android 8.0+</p>
           </div>
         </article>
 
@@ -354,9 +510,118 @@
             <a class="card-cta card-cta-secondary" href="https://drillo-comanda-mobile-2472a.web.app/desktop/releases/DrilloDesktopSetup-1.7.13.exe" data-desktop-link target="_blank" rel="noopener noreferrer" aria-label="Baixar o Drillo Desktop para Windows">
               Baixar Drillo Desktop <span class="desktop-version" data-desktop-version>1.7.13</span>
             </a>
+            <p class="card-mini-risk">Grátis · Sem cartão · Android + Windows</p>
           </div>
         </article>
 
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="section" id="como-funciona" aria-labelledby="how-title">
+      <div class="reveal section-heading-center">
+        <p class="section-label">Como funciona</p>
+        <h2 class="section-title" id="how-title">Do download ao primeiro pedido em 3 passos</h2>
+        <p class="section-sub">Sem treinamento, sem configuração complexa. Instale, cadastre e comece a vender.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h3>Instale pela Google Play</h3>
+          <p>Baixe o app no Android em segundos. Sem cadastro, sem cartão. Abra e comece a usar.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <h3>Monte seu cadastro</h3>
+          <p>Adicione produtos, serviços, preços e adicionais. Configure barbeiros ou mesas em minutos.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <h3>Venda e acompanhe</h3>
+          <p>Registre vendas, imprima comandas, feche o caixa e veja relatórios — tudo no mesmo app.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="section" id="comparar" aria-labelledby="compare-title">
+      <div class="reveal section-heading-center">
+        <p class="section-label">Comparação</p>
+        <h2 class="section-title" id="compare-title">Qual app serve para você?</h2>
+        <p class="section-sub">Compare os dois produtos lado a lado e escolha o certo para o seu negócio.</p>
+      </div>
+      <div class="compare-wrap reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Recurso</th>
+              <th class="col-barber">Drillo Barber</th>
+              <th class="col-comanda">Drillo Comanda</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>PDV e registro de vendas</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Controle de caixa</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Relatórios de vendas</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Funciona 100% offline</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Plano gratuito</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Impressão térmica Bluetooth</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Comanda digital por mesa/balcão</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Cardápio com adicionais e pizzas</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Comissão por barbeiro/serviço</td><td><span class="check">✓</span></td><td><span class="dash">—</span></td></tr>
+            <tr><td>Histórico de clientes e visitas</td><td><span class="check">✓</span></td><td><span class="dash">—</span></td></tr>
+            <tr><td>Controle de estoque com alertas</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Drillo Desktop (servidor Windows)</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+            <tr><td>Modo servidor/garçom em rede local</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:0.9rem; justify-content:center; margin-top:2.5rem;">
+        <a class="btn-primary" href="drillobarber/index.html" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold)); color: var(--bg); box-shadow: 0 8px 28px var(--gold-glow);">
+          Conhecer o Barber
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn-primary" href="drillocomanda/index.html">
+          Conhecer o Comanda
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="section" id="depoimentos" aria-labelledby="testimonials-title">
+      <div class="reveal section-heading-center">
+        <p class="section-label">Quem usa fala</p>
+        <h2 class="section-title" id="testimonials-title">Negócios reais. Resultados reais.</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Antes eu calculava a comissão na calculadora do celular. Agora o app já traz tudo pronto. Economizei desentendimento e tempo."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div><strong>Marcelo S.</strong><span>Barbearia do Marcelo · SP</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Trabalho em área com sinal ruim. O Drillo funciona sem internet mesmo — sem travar, sem perder dado. Pra mim isso vale ouro."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">T</div>
+            <div><strong>Thiago M.</strong><span>Barbeiro autônomo · RJ</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"O caixa vivia errado no caderno. Com o Drillo fechei o mês e sabia exatamente o que entrou e saiu. Nunca mais chutei o lucro."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">D</div>
+            <div><strong>Diego R.</strong><span>BarberHouse · MG</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -403,15 +668,15 @@
 
     <div class="cta-band reveal" role="complementary">
       <div class="cta-band-copy">
-        <h2>Qual negócio você quer organizar?</h2>
-        <p>Escolha o app certo para o seu segmento e comece hoje, sem custo.</p>
+        <h2>Comece grátis hoje. Sem cartão, sem risco.</h2>
+        <p>Escolha o app certo para o seu segmento e organize seu negócio em minutos. Você só paga se fizer sentido para você.</p>
       </div>
       <div class="cta-band-actions">
-        <a class="btn-primary" href="drillobarber/index.html">
+        <a class="btn-primary" href="drillobarber/index.html" style="background: linear-gradient(135deg, var(--gold-bright), var(--gold)); color: var(--bg); box-shadow: 0 8px 28px var(--gold-glow);">
           Drillo Barber
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="btn-secondary" href="drillocomanda/index.html">
+        <a class="btn-primary" href="drillocomanda/index.html">
           Drillo Comanda
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -462,9 +727,7 @@
             });
           }
         })
-        .catch(() => {
-          // The versioned fallback remains available when the manifest cannot be read.
-        });
+        .catch(() => {});
     </script>
 
   </body>
